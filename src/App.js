@@ -19,23 +19,27 @@ class App extends Component {
     })
   }
   render() {
-    let totalCredits = 0, totalGrade = 0;
+    let totalCredits = 0, totalGrade = 0, totalGpa = 0;
     const courses = this.state.courses.map((course, i) => {
-      totalCredits += course.credit;
-      totalGrade += course.grade;
+      let credit = course.credit
+      let grade = course.grade
+      totalGpa = credit * grade;
+      totalCredits += credit;
+      totalGrade += totalGpa;
       return <Course index={i} handleChange={this.handleChange.bind(this)} />;
     })
     return (
-      <div className="container">
+      <div className="container" >
         {courses}
-        <button className="button is-primary is-rounded" onClick={this.addCourse.bind(this)}>+</button>
+
+        <button className="button is-primary is-rounded " onClick={this.addCourse.bind(this)}>+</button>
+
+
         <div className="control is-centered">
           <div className="gpa tags has-addons">
-            <div className="tag is-dark">
-              <div className="tag is-info">
-                <p>{(totalGrade / totalCredits).toFixed(2)}</p>
-              </div>
-            </div>
+            <span className="tag is-dark">GPA</span>
+            <span className="tag is-info">{(totalGrade / totalCredits).toFixed(2)}</span>
+
           </div>
         </div>
 
