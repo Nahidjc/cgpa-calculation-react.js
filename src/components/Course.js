@@ -13,6 +13,7 @@ class Course extends Component {
                 <div className="control">
                     <div className="select">
                         <select onChange={this.handleCreditsChange.bind(this)}>
+                            <option>Credit</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>

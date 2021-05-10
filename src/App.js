@@ -29,9 +29,8 @@ class App extends Component {
       return <Course index={i} handleChange={this.handleChange.bind(this)} />;
     })
     return (
-      <div className="container" >
+      <div className="container my-5" >
         {courses}
-
         <button className="button is-primary is-rounded " onClick={this.addCourse.bind(this)}>+</button>
 
 

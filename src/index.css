@@ -1,5 +1,6 @@
 body {
   font-family: "Open Sans", serif;
+  background-color: rgb(228, 228, 55);
 }
 .hero.is-success {
   background: #f2f6fa;
@@ -14,4 +15,8 @@ body {
 .gpa {
   justify-content: center;
   margin: 1rem;
+}
+.container {
+  background-color: aquamarine;
+  padding: 50px;
 }
